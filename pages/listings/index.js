@@ -1,5 +1,8 @@
 import React, {useEffect, useState} from "react";
+import HouseCard from '../../components/HouseCard';
 import Head from 'next/head'
+import { useContext } from 'react'
+import ClickContext from '../../contexts/click'
 
 
 export default function Listings() {
@@ -21,8 +24,14 @@ export default function Listings() {
       <div>
           <h2>Houses for Sale</h2>
           {listings.map(item => <div key={item.id}>
-              {item.product}
-          </div> )}
+            <HouseCard
+              id={item.id}
+              product={item.product}
+              description={item.description}
+              price={item.price}
+              image={item.images.shift()}
+            />
+          </div>)}
       </div>
     </div>
   )
