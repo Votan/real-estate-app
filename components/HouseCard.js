@@ -38,7 +38,7 @@ const HouseCard = (props) => {
 
     return (
         <Card>
-            <Image src={props.image}></Image>
+            <Image src={props.images.shift()}></Image>
             <Title>
                 <Link href={"/house/" + props.id}>
                     <a onClick={() => setClickHouse(props)}>{props.product}</a>
