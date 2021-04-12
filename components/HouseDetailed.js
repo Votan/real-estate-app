@@ -33,8 +33,7 @@ const Price = styled.div`
 `
 
 const HouseDetailed = () => {
-    const [clickHouse, setClickHouse] = useContext(ClickContext);
-    console.log(clickHouse);
+    const [clickHouse] = useContext(ClickContext);
 
     return (
         <div>
