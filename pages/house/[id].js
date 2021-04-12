@@ -1,11 +1,9 @@
-import { useContext } from 'react';
-import ClickContext from '../../contexts/click';
+import HouseDetailed from '../../components/HouseDetailed';
 
 const HousePage = () => {
-  const [clickHouse] = useContext(ClickContext);
 
   return (
-    <div></div>
+    <HouseDetailed></HouseDetailed>
   )
 }
 
