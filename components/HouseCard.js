@@ -25,12 +25,13 @@ const Title = styled.h2`
 `
 
 const Description = styled.div`
-    color: blue
+    
 `
 
 const Price = styled.div`
     color: green;
     font-weight: bold;
+    margin-top: 10px;
 `
 
 const HouseCard = (props) => {
