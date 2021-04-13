@@ -32,7 +32,9 @@ class HouseList extends Component {
   render() {
     const { allHouses, currentHouses, currentPage, totalPages } = this.state;
     const totalHouses = allHouses.length;
-    console.log(allHouses)
+
+    if (totalHouses === 0) return null;
+
     return (
       <div>
         <div><Pagination totalRecords={totalHouses} pageLimit={10} pageNeighbours={2} onPageChanged={this.onPageChanged} /></div>
