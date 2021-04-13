@@ -3,14 +3,6 @@ import styled from 'styled-components';
 import { useContext } from 'react';
 import ClickContext from '../contexts/click';
 
-const Card = styled.div`
-    border: 1px solid;
-    border-radius: 3px;
-    margin: 30px auto;
-    padding: 30px;
-    width: 600px;
-`
-
 const Image = styled.img`
     display: inline-block;
     height: 300px;
