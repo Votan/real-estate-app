@@ -1,20 +1,9 @@
 import React, {useEffect, useState} from "react";
-import HouseCard from '../../components/HouseCard';
 import Head from 'next/head'
-import { useContext } from 'react'
-import ClickContext from '../../contexts/click'
-
+import HouseList from "../../components/HouseList";
 
 export default function Listings() {
   const [listings, setListings] = useState([]);
-
-  useEffect(() => {
-    fetch('api/listings')
-    .then(res => res.json())
-    .then(result => {
-      setListings(result);
-    });
-  }, []);
 
   return (
     <div>
@@ -22,10 +11,8 @@ export default function Listings() {
         <title>Houses for Sale</title>
       </Head>
       <div>
-          <h2>Houses for Sale</h2>
-          {listings.map(item => <div key={item.id}>
-            <HouseCard {...item}/>
-          </div>)}
+        <h2>Houses for Sale</h2>
+        <HouseList />
       </div>
     </div>
   )
