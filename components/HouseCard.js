@@ -5,27 +5,37 @@ import { useContext } from 'react';
 import ClickContext from '../contexts/click';
 
 const Card = styled.div`
-    border: 1px solid;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
     border-radius: 3px;
-    margin: 30px auto;
+    float: left;
+    height: 300px;
+    margin: 15px 30px;
+    overflow: hidden;
     padding: 30px;
-    width: 600px;
+    width: 300px;
 `
 
 const Image = styled.img`
     display: block;
-    height: 300px;
+    height: 185px;
     margin: -30px;
     position: relative;
     width: calc(100% + 60px);
 `
 
 const Title = styled.h2`
-    color: red
+    line-height: 3;
+    margin-bottom: 0;
+
+    a {
+        color: #000;
+        text-decoration: none;
+    }
 `
 
 const Description = styled.div`
-    
+    margin-top: -15px;
 `
 
 const Price = styled.div`
@@ -45,7 +55,7 @@ const HouseCard = (props) => {
                     <a onClick={() => setClickHouse(props)}>{props.product}</a>
                 </Link>
             </Title>
-            <Description>{props.description}</Description>
+            <Description>{props.description.slice(0, 150) + "..."}</Description>
             <Price>$ {props.price}</Price>
         </Card>
     )
