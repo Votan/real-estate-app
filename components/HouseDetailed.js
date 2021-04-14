@@ -12,7 +12,11 @@ const LeftColumn = styled.div`
 
 const RightColumn = styled.div`
   flex: 70%;
-  padding: 25px;
+  padding: 0 25px;
+
+  div {
+    margin 10px 0;
+  }
 `
 
 const Image = styled.img`
@@ -20,11 +24,16 @@ const Image = styled.img`
 `
 
 const Title = styled.h2`
-  
 `
 
 const Description = styled.div`
-  
+`
+
+const Address = styled.strong`
+`
+
+const Phone = styled.div`
+  float: right;
 `
 
 const Price = styled.div`
@@ -38,11 +47,13 @@ const HouseDetailed = () => {
   return (
     <HouseDetailsWrapper>
       <LeftColumn>
-        <Image src={clickHouse.images[0]}></Image>
+        {clickHouse.images.map(image => <Image src={image} />)}
       </LeftColumn>
       <RightColumn>
         <Title>{clickHouse.product}</Title>
         <Description>{clickHouse.description}</Description>
+        <Address>{clickHouse.address.city}, {clickHouse.address.street}</Address>
+        <Phone>{clickHouse.phone}</Phone>
         <Price>$ {clickHouse.price}</Price>
       </RightColumn>
     </HouseDetailsWrapper>
