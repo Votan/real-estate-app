@@ -29,7 +29,7 @@ const HouseDetailed = () => {
 
     return (
         <div>
-            <Image src={clickHouse.image}></Image>
+            <Image src={clickHouse.images[0]}></Image>
             <Title>{clickHouse.product}</Title>
             <Description>{clickHouse.description}</Description>
             <Price>$ {clickHouse.price}</Price>
