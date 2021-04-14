@@ -3,20 +3,28 @@ import styled from 'styled-components';
 import { useContext } from 'react';
 import ClickContext from '../contexts/click';
 
+const HouseDetailsWrapper = styled.div`
+  display: flex;
+`
+const LeftColumn = styled.div`
+  flex: 30%;
+`
+
+const RightColumn = styled.div`
+  flex: 70%;
+  padding: 25px;
+`
+
 const Image = styled.img`
-  display: inline-block;
-  height: 300px;
-  margin: -30px;
-  position: relative;
-  width: calc(100% + 60px);
+  width: 100%;
 `
 
 const Title = styled.h2`
-  padding: 0;
+  
 `
 
 const Description = styled.div`
-  color: blue
+  
 `
 
 const Price = styled.div`
@@ -28,12 +36,16 @@ const HouseDetailed = () => {
   const [clickHouse] = useContext(ClickContext);
 
   return (
-    <div>
-      <Image src={clickHouse.images[0]}></Image>
-      <Title>{clickHouse.product}</Title>
-      <Description>{clickHouse.description}</Description>
-      <Price>$ {clickHouse.price}</Price>
-    </div>
+    <HouseDetailsWrapper>
+      <LeftColumn>
+        <Image src={clickHouse.images[0]}></Image>
+      </LeftColumn>
+      <RightColumn>
+        <Title>{clickHouse.product}</Title>
+        <Description>{clickHouse.description}</Description>
+        <Price>$ {clickHouse.price}</Price>
+      </RightColumn>
+    </HouseDetailsWrapper>
   )
 }
 
