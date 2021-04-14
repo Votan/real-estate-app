@@ -37,8 +37,22 @@ class HouseList extends Component {
 
     return (
       <div>
-        <div><Pagination totalRecords={totalHouses} pageLimit={10} pageNeighbours={2} onPageChanged={this.onPageChanged} /></div>
-        <div>{ currentHouses.map(house => <HouseCard key={house.id} {...house} />) }</div>
+        <div>
+          <div>
+            <h2>
+              <strong>{totalHouses}</strong> Houses for Sale
+            </h2>
+            { currentPage && (
+              <span>
+                Page <span>{ currentPage }</span> / <span>{ totalPages }</span>
+              </span>
+            ) }
+          </div>
+          <div>
+            <Pagination totalRecords={totalHouses} pageLimit={10} pageNeighbours={2} onPageChanged={this.onPageChanged} />
+          </div>
+        </div>
+        { currentHouses.map(house => <HouseCard key={house.id} {...house} />) }
       </div>
     );
   }
