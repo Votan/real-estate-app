@@ -55,7 +55,7 @@ class HouseList extends Component {
             ) }
           </div>
           <div>
-            <Pagination totalRecords={totalHouses} pageLimit={10} pageNeighbours={2} onPageChanged={this.onPageChanged} />
+            <Pagination totalRecords={totalHouses} pageLimit={12} pageNeighbours={2} onPageChanged={this.onPageChanged} />
           </div>
         </div>
         <ListContainer>
