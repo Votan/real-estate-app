@@ -8,7 +8,6 @@ const Card = styled.div`
   background-color: #f8f9fa;
   border: 1px solid #dee2e6;
   border-radius: 3px;
-  float: left;
   height: 300px;
   margin: 15px 30px;
   overflow: hidden;

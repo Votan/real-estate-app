@@ -2,6 +2,12 @@ import React, {useEffect, Component} from 'react';
 import HouseCard from './HouseCard';
 import Pagination from './Pagination';
 import axios from 'axios';
+import styled from 'styled-components';
+
+const ListContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+`
 
 class HouseList extends Component {
   state = { 
@@ -52,7 +58,9 @@ class HouseList extends Component {
             <Pagination totalRecords={totalHouses} pageLimit={10} pageNeighbours={2} onPageChanged={this.onPageChanged} />
           </div>
         </div>
-        { currentHouses.map(house => <HouseCard key={house.id} {...house} />) }
+        <ListContainer>
+          { currentHouses.map(house => <HouseCard key={house.id} {...house} />) }
+        </ListContainer>
       </div>
     );
   }
